@@ -4,7 +4,8 @@ from django.shortcuts import render,HttpResponse
 
 
 def productlist(request):
-    pass
+    return render(request,'product.html')
+    
 
 
 def home(request):
