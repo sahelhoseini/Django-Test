@@ -13,5 +13,7 @@ def productlist(request):
 def basket(request):
     return render(request,'basket_page.html')
 
-def productitem(request):
-    return render(request,'product_item.html')
+def productitem(request,slug):
+    # return render(request,'product_item.html')
+    
+    return HttpResponse(slug)
