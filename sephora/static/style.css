@@ -1,9 +1,21 @@
 
+.myfont{
+    font-family: 'George IV', sans-serif;
+    font-weight: bold;
+}
+
+.myfont-size{
+    font-size: 18px;
+}
+
+
+
 body{
     padding: 0px;
     margin: 0px;
     font-family: "Poppins",sans-serif;
-    background: #f2f2f2;
+    background-color: #f2f2f2;
+    
     
 }
 
@@ -217,4 +229,11 @@ margin-bottom:0;
 
 
 
+.basket-btn{
+    color: #7f73e1 !important;
+}
 
+.basket-btn:hover{
+    color: #7f73e1 !important;
+    background-color: #eeeeee !important;
+}
