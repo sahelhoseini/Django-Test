@@ -7,8 +7,25 @@
 .myfont-size{
     font-size: 18px;
 }
-
-
+.btn-submit-1{
+    height:47px !important;
+    width:100px !important;
+    margin-top: 40px !important;
+    margin-left: 15px !important;
+    background-color: #eeeeee !important; 
+    border: solid #d3d6da 1px !important; 
+    color: #7f73e1 !important; 
+    font-size: 18px  !important;
+    font-weight: bolder !important;
+}
+.btn-submit-2{
+    width:100% !important; 
+    background-color: #eeeeee !important; 
+    border: solid #d3d6da 1px !important; 
+    color: #7f73e1 !important; 
+    font-size: 22px !important; 
+    font-weight: bolder !important;
+}
 
 body{
     padding: 0px;
