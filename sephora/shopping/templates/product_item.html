@@ -5,27 +5,28 @@
 
 {% block content %}
 
+
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-3 mb-md-0 rounded" src="./images/slider_mainpage/pixel (9)-copy2.jpg" alt="..." style="width: 350px; height:400px;" /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">SKU: BST-498</div>
-                        <h1 class="display-5 fw-bolder">Black eyeliner</h1>
+                        <div class="small mb-1">SKU: {{ product.code }}</div>
+                        <h1 class="display-5 fw-bolder">{{ product.title }}</h1>
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">120000 تومان</span><br>
-                            <span>110000 تومان</span>
+                            <!-- <span class="text-decoration-line-through">120000 تومان</span><br> -->
+                            <span>{{ product.price }} $</span>
                         </div>
-                        <p class="lead" style="margin-top: -20px; margin-bottom:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <p class="lead" style="margin-top: -20px; margin-bottom:20px;">{{product.description}}</p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3 p-" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn basket-btn mt-auto" type="button">
                                 <i class="bi-cart-fill me-1"></i>
-                                اضافه کردن به سبد خرید
+                                Add To Basket
                             </button>
                         </div>
                     </div>
+                    <div class="col-md-6"><img class="card-img-top mb-3 mb-md-0 rounded" src="./images/slider_mainpage/pixel (9)-copy2.jpg" alt="..." style="width: 350px; height:400px;" /></div>
                 </div>
             </div>
         </section>
