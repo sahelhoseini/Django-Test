@@ -156,95 +156,52 @@
   <!--end Main Layout-->
 
       <!-- start cards latest products-->
+
+
       <div class="container-fluid row mt-3 mb-4  d-flex justify-content-center">
         <p class="h2 tittle-cards "><b>The latest products</b></p>
-      <!-- card1 -->
-      <div class="col-2 card  mycard align-items-center" style="width: 250px;">
-        <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image">
+      
+      {% for item in product %}
+
+      <div class="col-2 card  mycard align-items-center ms-5" style="width: 250px;">
+        <img class="card-img-top rounded-3  mt-2" src="media/{{ item.image }}" alt="Card image">
         <div class="card-body text-center">
-          <h4 class="card-title mt-3">Eye Shadow</h4>
-          <p class="card-text">Some example text.</p>
+          <h4 class="card-title mt-3">{{ item.title }}</h4>
+          <p class="card-text">{{ item.price}} $</p>
           <a href="#" class="btn btn-outline-secondary btn-light btn-card card-btn">See Product</a>
         </div>
       </div>
+
+      {% endfor %}
+      </div>
+
       
-      <!-- card2 -->
-      <div class="col-2 card ms-3  mycard" style="width: 250px;" >
-        <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image" >
-        <div class="card-body text-center">
-          <h4 class="card-title mt-3">Eye Shadow</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="#" class="btn btn-outline-secondary btn-light btn-card">See Product</a>
-        </div>
-      </div>
-      <!-- card3 -->
-      <div class="col-2 card ms-3 mycard" style="width: 250px;"  >
-        <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image">
-        <div class="card-body text-center">
-          <h4 class="card-title mt-3">Eye Shadow</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="#" class="btn btn-outline-secondary btn-light btn-card">See Product</a>
-        </div>
-      </div>
-    
-    
-        <!-- card4 -->
-        
-        <div class="col-2 card ms-3 mycard" style="width: 250px;"  >
-          <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image">
-          <div class="card-body text-center">
-            <h4 class="card-title mt-3">Eye Shadow</h4>
-            <p class="card-text">Some example text.</p>
-            <a href="#" class="btn btn-outline-secondary btn-light btn-card ">See Product</a>
-          </div>
-        </div>
-      </div>
 <!-- end cards -->
 
 
 <!-- start cards Discounted products-->
 <div class="container-fluid row mt-3 mb-4  d-flex justify-content-center">
-  <p class="h2 tittle-cards "><b>Discounted products</b></p>
-<!-- card1 -->
-<div class="col-2 card  mycard align-items-center" style="width: 250px;">
-  <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image">
-  <div class="card-body text-center">
-    <h4 class="card-title mt-3">Eye Shadow</h4>
-    <p class="card-text">Some example text.</p>
-    <a href="#" class="btn btn-outline-secondary btn-light btn-card card-btn">See Product</a>
-  </div>
-</div>
+  <p class="h2 tittle-cards "><b>The latest products</b></p>
 
-<!-- card2 -->
-<div class="col-2 card ms-3  mycard" style="width: 250px;" >
-  <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image" >
-  <div class="card-body text-center">
-    <h4 class="card-title mt-3">Eye Shadow</h4>
-    <p class="card-text">Some example text.</p>
-    <a href="#" class="btn btn-outline-secondary btn-light btn-card">See Product</a>
-  </div>
-</div>
-<!-- card3 -->
-<div class="col-2 card ms-3 mycard" style="width: 250px;"  >
-  <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image">
-  <div class="card-body text-center">
-    <h4 class="card-title mt-3">Eye Shadow</h4>
-    <p class="card-text">Some example text.</p>
-    <a href="#" class="btn btn-outline-secondary btn-light btn-card">See Product</a>
-  </div>
-</div>
+{% for item in product %}
 
-
-  <!-- card4 -->
-  
-  <div class="col-2 card ms-3 mycard" style="width: 250px;"  >
-    <img class="card-img-top " src="./images/slider_mainpage/pixel (5).jpg" alt="Card image">
-    <div class="card-body text-center">
-      <h4 class="card-title mt-3">Eye Shadow</h4>
-      <p class="card-text">Some example text.</p>
-      <a href="#" class="btn btn-outline-secondary btn-light btn-card ">See Product</a>
-    </div>
-  </div>
+  {% if item.price > item.price_off  and  item.price_off != null %}
+    <a href="{% url 'productitem' slug=item.slug  %}"  style="text-decoration: none; color:rgb(54, 53, 53);">
+      <div class="col-2 card  mycard align-items-center ms-5" style="width: 250px;">
+        <!-- Sale badge-->
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.7rem">Sale</div>
+        <img class="card-img-top rounded-3  mt-2" src="media/{{ item.image }}" alt="Card image">
+        <div class="card-body text-center">
+          <h4 class="card-title mt-3">{{ item.title }}</h4>
+          <span class="text-muted text-decoration-line-through">{{ item.price}} </span>$<br>
+          <p class="card-text">{{ item.price_off}} $</p>
+          <a href="#" class="btn btn-outline-secondary btn-light btn-card card-btn">See Product</a>
+        </div>
+      </div>
+    </a>
+      {% endif %}
+    
+{% endfor %}
 </div>
 <!-- end cards -->
 
