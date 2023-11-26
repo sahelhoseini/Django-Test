@@ -7,7 +7,7 @@ def home(request):
     return render(request,'home.html')
 
 def productlist(request):
-    all_product=Products.objects.all()
+    all_product=Products.objects.all().order_by('-created')
     return render(request,'product.html',{'product':all_product })
 
 

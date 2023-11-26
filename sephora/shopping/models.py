@@ -10,6 +10,8 @@ class Products(models.Model):
     ratting=models.IntegerField(default=0, verbose_name='امتیاز')
     slug=models.SlugField(null=True,blank=True,unique=True)
     code=models.CharField(max_length=7, null=True, verbose_name='کد کالا')
+    created=models.DateField(auto_now_add=True,verbose_name='تاریخ ایجاد', null=True)
+    image=models.ImageField(upload_to='products',null=True)
 
 
     class Meta:
