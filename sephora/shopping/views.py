@@ -4,7 +4,8 @@ from  .models import Products
 
 
 def home(request):
-    return render(request,'home.html')
+    product=Products.objects.all().order_by('-created')
+    return render(request,'home.html',{'product':product })
 
 def productlist(request):
     all_product=Products.objects.all().order_by('-created')
