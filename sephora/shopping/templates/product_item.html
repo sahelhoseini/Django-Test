@@ -14,14 +14,18 @@
                         <div class="small mb-1">SKU: {{ product.code }}</div>
                         <h1 class="display-5 fw-bolder">{{ product.title }}</h1>
                         <div class="fs-5 mb-5">
-                            <!-- <span class="text-decoration-line-through">120000 تومان</span><br> -->
+                            {% if  product.price_off != null %}
+                            <span class="text-muted text-decoration-line-through">{{ product.price}} </span>$<br>
+                            <p class="card-text">{{ product.price_off}} $</p>
+                            {% else %}
                             <span>{{ product.price }} $</span>
+                            {% endif %}
                         </div>
                         <p class="lead" style="margin-top: -20px; margin-bottom:20px;">{{product.description}}</p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3 p-" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn basket-btn mt-auto" type="button">
-                                <i class="bi-cart-fill me-1"></i>
+                            <button class="btn basket-btn mt-auto  btn-outline-secondary" type="button">
+                                <i class="bi-cart-fill me-1 "></i>
                                 Add To Basket
                             </button>
                         </div>
